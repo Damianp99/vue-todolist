@@ -25,6 +25,7 @@ Vue.config.devtools = true
 const app = new Vue({
     el: '#root',
     data: {
+        newTask: '',
         tasks: [
             {
                 text: 'Fai la spesa',
@@ -42,10 +43,20 @@ const app = new Vue({
                 text: 'Porta fuori il cane',
                 done: false,
             },
+            {
+                text: 'Vai in palestra',
+                done: false,
+            },
         ]
 
     },
     methods: {
+        doneTask(task) {
+            task.done = false
+        },
+        removeTask() {
+
+        }
 
     },
 });

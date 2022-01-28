@@ -2,10 +2,11 @@
     text-decoration: line-through;
 }
 
-[class*= "fa-trash"]{
-    cursor: pointer;
+li div{
+    cursor:pointer;
 }
 
-li{
+li span{
     cursor: pointer;
+    margin-left: 10px;
 }
