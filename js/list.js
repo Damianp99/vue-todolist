@@ -25,6 +25,24 @@ Vue.config.devtools = true
 const app = new Vue({
     el: '#root',
     data: {
+        tasks: [
+            {
+                text: 'Fai la spesa',
+                done: true,
+            },
+            {
+                text: 'Butta la spazzatura',
+                done: true,
+            },
+            {
+                text: 'Porta la macchina dal meccanico',
+                done: true,
+            },
+            {
+                text: 'Porta fuori il cane',
+                done: true,
+            },
+        ]
 
     },
     methods: {
