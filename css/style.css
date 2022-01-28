@@ -1,0 +1,11 @@
+.done {
+    text-decoration: line-through;
+}
+
+[class*= "fa-trash"]{
+    cursor: pointer;
+}
+
+li{
+    cursor: pointer;
+}

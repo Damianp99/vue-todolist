@@ -32,7 +32,7 @@ const app = new Vue({
             },
             {
                 text: 'Butta la spazzatura',
-                done: true,
+                done: false,
             },
             {
                 text: 'Porta la macchina dal meccanico',
@@ -40,7 +40,7 @@ const app = new Vue({
             },
             {
                 text: 'Porta fuori il cane',
-                done: true,
+                done: false,
             },
         ]
 
