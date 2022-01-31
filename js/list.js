@@ -50,13 +50,28 @@ const app = new Vue({
         ]
 
     },
+
     methods: {
         doneTask(task) {
             task.done = false
         },
-        removeTask() {
+        removeTask(index) {
+            this.tasks.splice(index, 1)
+        },
+        addTask() {
+            const newTask = this.newTask.trim()
+            if (newTask) {
+                const taskObject = {
+                    text: newTask,
+                    done: false,
+                }
+                this.tasks.push(taskObject)
+            }
+            this.newTask = '';
+        },
 
-        }
-
+        toggleTask(index) {
+            this.tasks[index].done = !this.tasks[index].done;
+        },
     },
 });

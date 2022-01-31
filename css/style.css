@@ -1,5 +1,6 @@
 .done {
     text-decoration: line-through;
+    
 }
 
 li div{
@@ -8,5 +9,15 @@ li div{
 
 li span{
     cursor: pointer;
-    margin-left: 10px;
+    
+}
+.fa-list-ol{
+    font-size: 30px;
+}
+.fa-trash-alt{
+    color:#B22222
+}
+
+.fa-check-square{
+    color: #006600
 }

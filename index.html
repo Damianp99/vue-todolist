@@ -17,30 +17,40 @@
 
 <body>
     <div id="root">
-        <header class="text-center">
-            <h1> To do list</h1>
-        </header>
-        <div class="container">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Aggiungi una nuova task" aria-label="New task"
-                    aria-describedby="button-addon2">
-                <button class="btn btn-outline-success" type="button" id="button-addon2">Aggiungi</button>
+        <header class="text-center my-5">
+            <div class="d-flex justify-content-center align-items-center">
+                <i class="fas fa-list-ol me-3"></i>
+                <h1> To do list </h1>
             </div>
+        </header>
+        <main>
+            <div class="container bg-dark p-5 rounded-3 ">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Aggiungi una nuova task" @keyup.enter="addTask"
+                        v-model="newTask">
+                    <button class="btn btn-success" type="button" @click="addTask">Aggiungi</button>
+                </div>
 
-            <main>
-                <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between " v-for="task in tasks"
+
+                <ul class="list-group" v-if="tasks.length">
+                    <li class="list-group-item d-flex justify-content-between " v-for="(task,index) in tasks"
                         :class="task.done ? 'done' :''">
-                        <div><i class="far fa-square"></i> <span>{{task.text}}</span></div>
-                        <div><i class="fas fa-trash-alt"></i></div>
+                        <div @click="toggleTask(index)" role="button"><i class="far me-2"
+                                :class="task.done ?'fa-check-square' : 'fa-square'"></i>
+                            <span>{{task.text}}</span>
+                        </div>
+                        <div><i class="fas fa-trash-alt" @click="removeTask(index)"></i></div>
                     </li>
                 </ul>
-            </main>
-
-        </div>
-
+                <h2 v-else class="text-center text-white">Non abbiamo altre task nella lista<i
+                        class="far fa-sad-cry ms-3"></i></h2>
+            </div>
+        </main>
 
     </div>
+
+
+
     <script src="js/list.js"></script>
 </body>
 
